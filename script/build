@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# Build Script
+#
+# This file is a hook script excuted while building.
+# You can specify some commands to do.
+# 
+# NOTICE: You should return 0 when no error occurred.
+#
+# Copyright (C) 2017-2018 Tiaozhan Net. All rights reserved.
+#########################################################
+
+set -e
+
+. /usr/lib/log
+info "Building start..."
+
+## apk upgrade
+apk update
+apk upgrade
+
+#### NOW YOU CAN BEGIN FROM HERE ####
+sed -i 's/,parse_ini_file,/,/g' /etc/php7/php.ini
+sed -i 's/,curl_exec,/,/g' /etc/php7/php.ini
+mv -f /runtime/config/website.conf /etc/nginx/sites-enabled/website.conf
+chown -R nginx:nginx /runtime/APP/runtime
+
+#### THE END OF YOUR SCRIPT ####
+
+## cleaning
+rm -rf /var/cache/apk/* /tmp/* /var/tmp/*
+mkdir /var/tmp/nginx    # or nginx won't start
+
+info "Building complete."
+
+exit
