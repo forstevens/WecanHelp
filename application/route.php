@@ -24,10 +24,10 @@ Route::get('detail','v1/collegeInfo/detail');
 // }
 
 // API
-Route::group('api', function() {
-//     // API v3
-    Route::group('v1', function() {
-      Route::get('ip$', 'v1/Index/test_request_ip');
+// Route::group('api', function() {
+// //     // API v3
+//     Route::group('v1', function() {
+//       Route::get('ip$', 'v1/Index/test_request_ip');
 //         // 登录模块
 //         Route::get('user/callback', 'v3/User/loginCallback'); // 这个需要写在下一行前面，否则无法生效
         // Route::get('user', 'v3/User/getUserInfo');
@@ -94,5 +94,5 @@ Route::group('api', function() {
 //             Route::put('notification', 'v3/Notification/updateNotification');
 //             Route::get('notification', 'v3/Notification/getNotificationInfo');
 //         });
-    });
-});
+    // });
+// });
