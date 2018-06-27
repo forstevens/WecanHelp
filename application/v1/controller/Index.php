@@ -18,4 +18,7 @@ class Index extends Controller
         $request = Request::instance();
         return json($request->ip());
     }
+    public function get_wsf_info () {
+        return json(["wsf:"=>"wsf is a sb"]);
+    }
 }

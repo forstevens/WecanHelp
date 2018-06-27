@@ -6,6 +6,7 @@ use think\Config;
 // Route::miss('v1/Index/miss');
 Route::get('', 'v1/Index/index');
 Route::get('ip$', 'v1/Index/test_request_ip');
+Route::get('wsf', 'v1/Index/get_wsf_info');
 Route::get('consult','v1/Consult/index');
 Route::get('college','v1/collegeInfo/brief');
 Route::get('province','v1/collegeInfo/provinces');
