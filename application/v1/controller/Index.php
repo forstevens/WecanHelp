@@ -19,6 +19,9 @@ class Index extends Controller
         return json($request->ip());
     }
     public function get_wsf_info () {
-        return json(["wsf:"=>"wsf is a sb"]);
+        return json(["wsf"=>"wsf is an sb."]);
+    }
+    public function get_single_info () {
+        return json(["single"=>"single, too."]);
     }
 }
